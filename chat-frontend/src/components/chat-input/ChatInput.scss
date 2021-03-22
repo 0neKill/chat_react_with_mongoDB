@@ -1,0 +1,136 @@
+.chat-input {
+  display: flex;
+  position: relative;
+  margin: 20px;
+
+  &__emoji-picker {
+    position: absolute;
+    bottom: 50px;
+    z-index: 1;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    width: 80px;
+    justify-content: space-between;
+    margin-left: 15px;
+
+    &-upload-btn {
+      cursor: pointer;
+
+      input {
+        cursor: pointer;
+      }
+
+      &:hover {
+        button {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__record-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+
+    &--close {
+      border: 0;
+      padding: 0;
+      margin: 0;
+      &::before,&::after{
+        content: none;
+        border: 0;
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    &-title {
+      color: #f56b6b;
+    }
+
+    span {
+      margin-left: 10px;
+    }
+
+    &-bubble {
+      display: inline-block;
+      position: relative;
+      height: 12px;
+      width: 12px;
+      border-radius: 50%;
+      background-color: #f56b6b;
+
+      &::before {
+        position: absolute;
+        content: '';
+        height: 12px;
+        width: 12px;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        background-color: rgba(245, 107, 107, 0.5);
+        animation: wave-animation 1s ease-in-out infinite;
+        transform: scale(1);
+      }
+    }
+
+  }
+
+  &__attachments {
+    position: absolute;
+    left: 67px;
+    top: 807px;
+
+    .ant-upload-list-picture-card {
+      .ant-upload-list-item {
+        width: 92px;
+        height: 92px;
+      }
+    }
+  }
+
+  &__smile-btn {
+
+    margin-right: 15px;
+
+    span.anticon {
+      margin-top: 11px;
+    }
+  }
+
+  .ant-btn-ghost {
+    span.anticon {
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+
+
+  input {
+    height: 40px;
+    padding: 6px 11px 8px;
+    font-size: 14px;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
