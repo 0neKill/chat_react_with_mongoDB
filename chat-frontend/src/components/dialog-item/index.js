@@ -12,7 +12,7 @@ const messageTime = created_at => {
         format(new Date(created_at), 'HH:mm') :
         format(new Date(created_at), 'dd.MM.yyyy')
 }
-//новый вид передачи id onClick={onSelectCurrentDialog.bind(this,_id)
+
 
 const DialogItem = ({_id, currentDialog, unReaded, isReaded, partner, isMe = false, lastMessage}) => {
     return (
